@@ -1,0 +1,110 @@
+Component: ARM Compiler 6.16 Tool: armlink [5dfeaa00]
+
+==============================================================================
+
+Section Cross References
+
+    problem5.o(reset) refers to problem5.o(stack) for __initial_sp
+    problem5.o(reset) refers to problem5.o(init) for Reset_Handler
+    problem5.o(init) refers to problem5.o(input) for table
+    problem5.o(init) refers to problem5.o(output) for result
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    problem5.s                               0x00000000   Number         0  problem5.o ABSOLUTE
+    reset                                    0x08000000   Section        8  problem5.o(reset)
+    $v0                                      0x08000008   Number         0  problem5.o(init)
+    init                                     0x08000008   Section       48  problem5.o(init)
+    table                                    0x08000038   Data          40  problem5.o(input)
+    input                                    0x08000038   Section       44  problem5.o(input)
+    length                                   0x08000060   Data           4  problem5.o(input)
+    result                                   0x38000000   Data           4  problem5.o(output)
+    output                                   0x38000000   Section        4  problem5.o(output)
+    stack                                    0x38000004   Section     1024  problem5.o(stack)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPv5_D16$PE$PLD8$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$~IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  problem5.o(reset)
+    Reset_Handler                            0x08000009   Thumb Code     0  problem5.o(init)
+    __initial_sp                             0x38000404   Data           0  problem5.o(stack)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x08000009
+
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00000068, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000064, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x08000000   0x00000008   Data   RO            2    reset               problem5.o
+    0x08000008   0x08000008   0x00000030   Code   RO            3  * init                problem5.o
+    0x08000038   0x08000038   0x0000002c   Data   RO            4    input               problem5.o
+
+
+    Execution Region ER_RW (Exec base: 0x38000000, Load base: 0x08000064, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x38000000   0x08000064   0x00000004   Data   RW            5    output              problem5.o
+
+
+    Execution Region ER_ZI (Exec base: 0x38000004, Load base: 0x08000068, Size: 0x00000400, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x38000004        -       0x00000400   Zero   RW            1    stack               problem5.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        48         12         52          4       1024        284   problem5.o
+
+    ----------------------------------------------------------------------
+        48         12         52          4       1024        284   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+        48         12         52          4       1024        284   Grand Totals
+        48         12         52          4       1024        284   ELF Image Totals
+        48         12         52          4          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                  100 (   0.10kB)
+    Total RW  Size (RW Data + ZI Data)              1028 (   1.00kB)
+    Total ROM Size (Code + RO Data + RW Data)        104 (   0.10kB)
+
+==============================================================================
+

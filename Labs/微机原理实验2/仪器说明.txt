@@ -1,0 +1,2 @@
+stm32h745xih6 disco板子和stm32h745zit6 nucleo板子他们两个的时钟树是不一样的 disco板子好像是用的25M晶振...SystemClock_Config
+nucleo板子的例程用的8M晶振
